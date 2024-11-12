@@ -1,5 +1,6 @@
-import requests
 import logging
+
+import requests
 
 from core import settings
 from ports.notifications import BaseNotificationSender

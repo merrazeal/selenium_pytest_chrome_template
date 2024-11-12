@@ -1,7 +1,7 @@
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains
 
 from adapters.watchdog.handlers import PartialDownloadHandler
 from core import settings
@@ -25,6 +25,8 @@ def test_download_python(driver, test_logger):
         EC.element_to_be_clickable((By.CSS_SELECTOR, ".download-os-source .button"))
     )
     download_button.click()
-    is_download = is_file_downloaded(directory_path=settings.DOWNLOADS_DIR, handler=PartialDownloadHandler("Python-"))
+    is_download = is_file_downloaded(
+        directory_path=settings.DOWNLOADS_DIR, handler=PartialDownloadHandler("Python-")
+    )
     assert is_download
     test_logger.info("test_download_python passed successfully!")

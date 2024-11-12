@@ -4,7 +4,7 @@ from logging.config import dictConfig
 import pytest
 from selenium import webdriver
 
-from core import settings, logger
+from core import logger, settings
 
 
 @pytest.fixture
@@ -27,7 +27,10 @@ def options():
 @pytest.fixture
 def driver(options, service):
     driver = webdriver.Chrome(options=options, service=service)
-    driver.execute_cdp_cmd("Page.setDownloadBehavior", {"behavior": "allow", "downloadPath": settings.DOWNLOADS_DIR})
+    driver.execute_cdp_cmd(
+        "Page.setDownloadBehavior",
+        {"behavior": "allow", "downloadPath": settings.DOWNLOADS_DIR},
+    )
     driver.maximize_window()
     yield driver
     driver.quit()

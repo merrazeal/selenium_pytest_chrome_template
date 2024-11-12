@@ -1,7 +1,7 @@
 import logging
 
-from core import settings
 from adapters.notifications.telegram import TelegramNotificationSender
+from core import settings
 
 
 def pytest_terminal_summary(terminalreporter, exitstatus, config):

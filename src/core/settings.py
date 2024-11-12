@@ -1,6 +1,5 @@
 import os
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TMP_DIR = os.path.join(BASE_DIR, "tmp")
@@ -17,7 +16,7 @@ TELEGRAM_CONFIG = {
     "image_url": "https://api.telegram.org/bot{bot_id}/sendPhoto",
 }
 
-TELEGRAM_NOTIFICATION = os.environ.get("TELEGRAM_NOTIFICATION") == 'True'
+TELEGRAM_NOTIFICATION = os.environ.get("TELEGRAM_NOTIFICATION") == "True"
 
 WEB_WAITER_DEFAULT_TIMEOUT = 5
 WEB_WAITER_DOWNLOAD_TIMEOUT = 30
