@@ -1,0 +1,9 @@
+services:
+
+  ws_selenium_tests_prod:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    restart: "no"
+    env_file: ./docker/env.prod
+    shm_size: 1gb
